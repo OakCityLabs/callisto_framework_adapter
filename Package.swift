@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "callisto_framework_adapter",
+    platforms: [
+        .iOS(.v14), .macCatalyst(.v14)
+    ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
