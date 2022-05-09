@@ -24,7 +24,7 @@ let package = Package(
             dependencies: [
                 .product(
                     name: "CallistoFrameworks", 
-                    package: "CallistoFrameworks",
+                    package: "callisto_frameworks",
                     condition: .when(platforms: [.iOS])
                 )
             ]),
