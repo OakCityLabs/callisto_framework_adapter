@@ -14,7 +14,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
-        .package(url: "https://github.com/OakCityLabs/callisto_ios_frameworks.git", from: "0.1.0"),
+        .package(url: "https://github.com/OakCityLabs/callisto_frameworks.git", from: "0.1.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -22,7 +22,11 @@ let package = Package(
         .target(
             name: "callisto_framework_adapter",
             dependencies: [
-                .product(name: "CallistoFrameworks", condition: .when(platforms: [.iOS]))
+                .product(
+                    name: "CallistoFrameworks", 
+                    package: "CallistoFrameworks",
+                    condition: .when(platforms: [.iOS])
+                )
             ]),
         .testTarget(
             name: "callisto_framework_adapterTests",
